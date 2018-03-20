@@ -1,18 +1,31 @@
-@component('mail::message')
-# Introduction
+ @component('mail::layout')
+ @slot('header')
+     @component('mail::header', ['url' => 'http://192.168.1.182:8000/'])
+            Equipos de trabajo
+        @endcomponent
+    @endslot
 
-The body of your message.
-Bienvenido
-ahora si
 
-Tus datos de acceso son:
-Correo: {{$mail}}
+# Bienvenido
+
+
+
+Tus datos de acceso son:<br>
+Correo: {{$mail}}<br>
 Contraseña: {{$pass}}
 
-@component('mail::button', ['url' => ''])
-Button Text
+@component('mail::button', ['url' => 'http://192.168.1.182:8000/'])
+Ingresar
 @endcomponent
 
-Thanks,<br>
-{{ config('app.name') }}
+Atentamente,<br>
+Kevin Garcia
+
+
+@slot('footer')
+        @component('mail::footer')
+            © {{ date('Y') }} Developed by KevinGC
+        @endcomponent
+    @endslot
 @endcomponent
+
