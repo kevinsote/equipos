@@ -1,0 +1,1 @@
+Usuario y/o contraseña del planner incorrectos
